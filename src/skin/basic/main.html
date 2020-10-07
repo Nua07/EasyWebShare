@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>EasyWebShare</title>
+    </head>
+
+    <body>
+        <h1>EasyWebShare</h1>
+        <hr>
+        <ul>
+            % for data in datas:
+                <li>\
+                    % if data["type"] == "file":
+                        <a href="/download?path=${data["path"]}">[FILE] ${data["name"]}</a>\
+                    % elif data["type"] == "dir":
+                        <a href="/?path=${data["path"]}">[DIR] ${data["name"]}</a>\
+                    % endif
+                </li>\
+            % endfor
+        </ul>
+    </body>
+</html>
